@@ -6,34 +6,46 @@
 }
 
 body{
-    min-height: 100vh;
+    height: 100vh;
     background-image: url("../img/4903124.jpg");
     background-size: cover;
+    background-attachment: fixed;
     background-position: center center;
     background-repeat: no-repeat;
     
+    
 } 
 
-h1{
-        color: #0b0c4c;
-        font-size: 2.5em;
-        font-family: Arial, Helvetica, sans-serif
+.container-geral{
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+
+
 .container{
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 300px;
+    height: 500px;
     padding: 10px;
     border-radius: 20px;
     text-align: center;
     background-color: #FFF;
     color: #4a71a3;
     box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.39);
-    overflow: hidden;
+}
+
+h1{
+        color: #0b0c4c;
+        font-size: 2.5em;
+        font-family: Arial, Helvetica, sans-serif
 }
 
 form{
@@ -77,6 +89,7 @@ a#link{
 
 a#link:hover{
     color: #4a71a3;
+    text-decoration: none;
 }
 
 input#login{
@@ -85,10 +98,11 @@ input#login{
     color: #FFF;
     border-radius: 10px;
     margin: auto;
-    width: 200px;
+    width: 100%;
     text-align: center;
     font-size: 1.2em;
     margin-top: 30px;
+    border: 1px solid #0b0c4c;
 }
 
 input#login:hover{
@@ -100,132 +114,113 @@ input#login:hover{
 
 .container-redes{
     margin-top: 10px;
-    font-weight: 900;
+    font-weight: bold;
 }
 
-.icones{
-    display: inline-block;
-    margin-left: 12px;
-    margin-top: 10px;
+
+.icone{
+   text-decoration: none;
+   font-size: 2em;
 }
 
-.img-icone{
-    width: 30px;
+.icone i {
+    color: #0b0c4c;
 }
 
-.container-form{
-    display: block;
-
+i.fa-facebook:hover{
+    color:#3b5998 ;
 }
 
-.container-img{
-    position: relative;
-    background-image: url("../img/img-login.jpg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
-
-
+i.fa-google:hover{
+    color: rgb(116, 116, 116);
 }
 
-/* CELULARES E TELAS PEQUENAS */
-@media screen and (max-width: 480px) and (orientation: portrait){
 
-   .container{
-        width: 300px;
 
-   }
-   
-    .container-redes{
-        font-weight: 900;
+
+
+/* telas de no minimo 768px para cima e orientação retrato |
+    tablets
+*/
+@media screen and (min-width:768px) and (orientation:portrait) {
+    .container{
+        width: 600px;
+        height: 900px;
+        justify-content: center;
     }
 
+    h1{
+        font-size: 3.5em;
+        
+    }
+
+    label{
+        font-size: 1.3em;
+    }
+
+    input#email,
+    input#senha{
+        font-size: 1.7em;
+    
+    }
+
+    a#link{
+        font-size: 1.3em;
+    }
+
+    input#login{
+        font-size: 1.9em;
+    }
+
+    .container-redes p{
+        font-size: 1.4em;
+    }
+
+    .icone{
+        text-decoration: none;
+        font-size: 2.5em;
+     }
+    
    
+}
+
+
+/* telas de no minimo 768px para cima na orientação paisagem __*/
+@media screen and (min-width: 768px) and (max-width:991px) and (orientation:landscape) {
+    .container{
+        width: 500px;
+    }
+}
+
+/* telas de no minimo 900px para cima e orientação paisagem __*/
+@media screen and (min-width:992px) and (orientation: landscape) {
+
+    .container{
+        width: 800px;
+    }
+    
+}
+
+/* telas maiores de 992px --DESKTOP-- */
+@media screen and (min-width:992px) {
+    .container{
+        width: 50%;
+    }
+
     .container-form{
-        width: 100%;
-    
+        display: flex;
+        justify-content:center;
     }
 
-    .container-img{
-        margin: auto;
-        width: 100%;
-        height: 200px;
-    
-    }
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
 
-}
-
-@media screen and (orientation: landscape){
-    .container{
-        width: 70%;
-    
-    }
-
-}
-
-
- /* TABLETS */
-@media screen and (min-width: 481px) {
-
-
-    .container{
-        width: 400px;
-    }
-
-
-    .container-form{ 
-        width: 100%;
-    }
-
-    .container-img{ 
-        width: 250px;
-        height: 250px;
-        margin: auto;
-    }
-    
-}
-
- /* NOTEBOOKS */
-@media screen and (min-width: 768px) {
-
-    .container{
-        width: 700px;  
-    }
-
-
-    .container-form{ 
-        float: right;
-        width: 400px;
-        margin-left: 10px;
-    }
-
-    .container-img{ 
-        float: left;
-        width: 250px;
-        height: 250px;
     }
 
     
 }
 
-/* TELAS GRANDES */
-@media screen and (min-width: 992px) {
-    
-    .container{
-        width: 900px;
-    }
 
 
-    .container-form{ /**/
-        float: right;
-        width: 400px;
-        margin-left: 10px;
-    }
-
-    .container-img{ /**/
-        float: left;
-        width: 400px;
-        height: 400px;
-    }
-
-}
